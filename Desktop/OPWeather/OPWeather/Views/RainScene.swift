@@ -1,9 +1,3 @@
-//
-//  RainScene.swift
-//  OPWeather
-//
-//  Created by silvia on 2024/06/24.
-//
 
 import SpriteKit
 

@@ -1,9 +1,3 @@
-//
-//  SunnyScene.swift
-//  OPWeather
-//
-//  Created by silvia on 2024/06/27.
-//
 
 import SpriteKit
 
@@ -25,5 +19,3 @@ class SunnyScene: SKScene {
         sunNode.run(repeatAction)
     }
 }
-
-

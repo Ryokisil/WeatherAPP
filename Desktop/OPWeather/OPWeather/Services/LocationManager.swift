@@ -1,9 +1,3 @@
-//
-//  LocationManager.swift
-//  OPWeather
-//
-//  Created by silvia on 2024/06/23.
-//
 
 import Foundation
 import CoreLocation
@@ -64,7 +58,3 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         }
     }
 }
-
-
-
-

@@ -1,9 +1,3 @@
-//
-//  ContentView.swift
-//  OPWeather
-//
-//  Created by silvia on 2024/06/21.
-//
 
 import SwiftUI
 import CoreLocation
@@ -52,7 +46,6 @@ struct ContentView: View {
             }
             
             
-            
             VStack {
                 if let location = locationManager.location {
                     VStack {
@@ -84,6 +77,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
-
-
