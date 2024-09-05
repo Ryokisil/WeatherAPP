@@ -5,7 +5,7 @@ import SpriteKit
 
 struct ContentView: View {
     @State private var city: String = ""
-    @StateObject private var viewModel = WeatherViewModel()
+    @StateObject private var viewModel = WeatherViewModel(weatherService: WeatherService())
     @StateObject private var locationManager = LocationManager()
     
     // デバッグ用の変数（テスト時に強制的にアニメーションや画像を表示）

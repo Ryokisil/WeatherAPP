@@ -3,7 +3,7 @@ import Foundation
 import Combine
 import CoreLocation
 
-// WeatherViewModelクラスで天気情報の取得とデータの公開を管理する
+// 天気情報を管理するクラス
 class WeatherViewModel: ObservableObject {
     // ユーザーに公開される天気情報のプロパティ
     @Published var temperature: String = ""
@@ -12,42 +12,45 @@ class WeatherViewModel: ObservableObject {
     @Published var high: String = ""
     @Published var low: String = ""
 
-    // WeatherServiceのインスタンス
-    private let weatherService = WeatherService()
+    private let weatherService: WeatherServiceProtocol
+    init(weatherService: WeatherServiceProtocol) {
+        self.weatherService = weatherService
+    }
 
-    // 都市名を指定して天気情報を取得するメソッド
-    func fetchWeather(_ city: String) {
-        DispatchQueue.global(qos: .background).async { //バックグラウンドでネットワークリクエストを実行
-            // 天気情報を取得するためにWeatherServiceを呼び出す
+    // 都市名を指定して天気情報を取得する
+    func fetchWeather(for city: String) {
+        DispatchQueue.global(qos: .background).async { // 非同期でネットワークリクエストをバックグラウンドで実行
+           
             self.weatherService.fetchWeather(for: city) { weather in
-                // weatherDataが存在するかどうかを確認
+                // データが取得できたらUIをメインスレッドで更新
                 if let weather = weather {
-                    // weatherDataが存在する場合の処理
                     DispatchQueue.main.async {
-                        self.temperature = "\(weather.temperature)°C"
+                        self.temperature = String(format: "%.0f°C", weather.temperature)
                         self.description = weather.description
                         self.weatherType = self.getWeatherType(from: weather.description, weatherCode: weather.weatherCode)
-                        self.high = "H: \(weather.high)°C"
-                        self.low = "L: \(weather.low)°C"
+                        self.high = String(format: "H: %.0f°C", weather.high)
+                        self.low = String(format: "L: %.0f°C", weather.low)
                     }
                 }
             }
         }
     }
 
-    // 現在の位置情報を使用して天気情報を取得するメソッド
+    // 現在の位置情報を使用して天気情報を取得する
     func fetchWeather(for location: CLLocation) {
             let latitude = location.coordinate.latitude
             let longitude = location.coordinate.longitude
-        DispatchQueue.global(qos: .background).async { //バックグラウンドでネットワークリクエストを実行
+        DispatchQueue.global(qos: .background).async { // 非同期でネットワークリクエストをバックグラウンドで実行
+            
             self.weatherService.fetchWeather(for: latitude, longitude: longitude) { weather in
+                // データが取得できたらUIをメインスレッドで更新
                 if let weather = weather {
                     DispatchQueue.main.async {
-                        self.temperature = "\(weather.temperature)°C"
+                        self.temperature = String(format: "%.0f°C", weather.temperature)
                         self.description = weather.description
                         self.weatherType = self.getWeatherType(from: weather.description, weatherCode: weather.weatherCode)
-                        self.high = "H: \(weather.high)°C"
-                        self.low = "L: \(weather.low)°C"
+                        self.high = String(format: "H: %.0f°C", weather.high)
+                        self.low = String(format: "L: %.0f°C", weather.low)
                     }
                 }
             }
@@ -93,13 +96,11 @@ class WeatherViewModel: ObservableObject {
     }
 }
 
-// 夜の開始時刻を設定する変数
-let nightStartHour = 18 // 18時（午後6時）からを夜と設定
-
-// 現在の時刻を取得する関数
-func getCurrentHour() -> Int { //-> Intで戻り値を整数型にする
-    let currentTime = Date() // 現在の日付と時刻を取得し、currentTimeという名前の定数に格納
-    let calendar = Calendar.current // 現在のカレンダーを取得
-    return calendar.component(.hour, from: currentTime) // 現在の日付から時間部分を取得し、返す
+//夜の時間を作りたい
+let nightStartHour = 18
+// 現在の時刻を取得する
+func getCurrentHour() -> Int {
+    let currentTime = Date()
+    let calendar = Calendar.current
+    return calendar.component(.hour, from: currentTime)
 }
-

@@ -12,7 +12,7 @@
 		53961F362C25538A00556E77 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53961F352C25538A00556E77 /* ContentView.swift */; };
 		53961F382C25538B00556E77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53961F372C25538B00556E77 /* Assets.xcassets */; };
 		53961F3B2C25538B00556E77 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53961F3A2C25538B00556E77 /* Preview Assets.xcassets */; };
-		53961F452C25538B00556E77 /* OPWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53961F442C25538B00556E77 /* OPWeatherTests.swift */; };
+		53961F452C25538B00556E77 /* WeatherViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53961F442C25538B00556E77 /* WeatherViewModelTests.swift */; };
 		53961F4F2C25538B00556E77 /* OPWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53961F4E2C25538B00556E77 /* OPWeatherUITests.swift */; };
 		53961F512C25538B00556E77 /* OPWeatherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53961F502C25538B00556E77 /* OPWeatherUITestsLaunchTests.swift */; };
 		53A4594B2C2572C800FD969B /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A4594A2C2572C800FD969B /* WeatherData.swift */; };
@@ -21,6 +21,8 @@
 		53A459512C298F9E00FD969B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53A4594F2C298F9D00FD969B /* Assets.xcassets */; };
 		53A459532C29A43300FD969B /* RainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A459522C29A43300FD969B /* RainScene.swift */; };
 		53A459552C2D8E2F00FD969B /* SunnyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A459542C2D8E2F00FD969B /* SunnyScene.swift */; };
+		53BA9B342C897A3A008E6D39 /* WeatherServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BA9B332C897A3A008E6D39 /* WeatherServiceProtocol.swift */; };
+		53BA9B362C899CD9008E6D39 /* MockWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BA9B352C899CD9008E6D39 /* MockWeatherService.swift */; };
 		53FDC4612C25567500F96B83 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FDC4602C25567500F96B83 /* WeatherService.swift */; };
 		53FDC4632C2557CA00F96B83 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FDC4622C2557CA00F96B83 /* WeatherViewModel.swift */; };
 		F5432001EF82BFC7C90B87ED /* Pods_OPWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 552657FFCFAC630335266A8B /* Pods_OPWeather.framework */; };
@@ -52,7 +54,7 @@
 		53961F372C25538B00556E77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53961F3A2C25538B00556E77 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		53961F402C25538B00556E77 /* OPWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OPWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		53961F442C25538B00556E77 /* OPWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPWeatherTests.swift; sourceTree = "<group>"; };
+		53961F442C25538B00556E77 /* WeatherViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModelTests.swift; sourceTree = "<group>"; };
 		53961F4A2C25538B00556E77 /* OPWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OPWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53961F4E2C25538B00556E77 /* OPWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPWeatherUITests.swift; sourceTree = "<group>"; };
 		53961F502C25538B00556E77 /* OPWeatherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPWeatherUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -62,6 +64,8 @@
 		53A4594F2C298F9D00FD969B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53A459522C29A43300FD969B /* RainScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainScene.swift; sourceTree = "<group>"; };
 		53A459542C2D8E2F00FD969B /* SunnyScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunnyScene.swift; sourceTree = "<group>"; };
+		53BA9B332C897A3A008E6D39 /* WeatherServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceProtocol.swift; sourceTree = "<group>"; };
+		53BA9B352C899CD9008E6D39 /* MockWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWeatherService.swift; sourceTree = "<group>"; };
 		53FDC4602C25567500F96B83 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		53FDC4622C2557CA00F96B83 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		552657FFCFAC630335266A8B /* Pods_OPWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OPWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,7 +154,8 @@
 		53961F432C25538B00556E77 /* OPWeatherTests */ = {
 			isa = PBXGroup;
 			children = (
-				53961F442C25538B00556E77 /* OPWeatherTests.swift */,
+				53BA9B352C899CD9008E6D39 /* MockWeatherService.swift */,
+				53961F442C25538B00556E77 /* WeatherViewModelTests.swift */,
 			);
 			path = OPWeatherTests;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 			children = (
 				53FDC4602C25567500F96B83 /* WeatherService.swift */,
 				53A4594C2C27F1A700FD969B /* LocationManager.swift */,
+				53BA9B332C897A3A008E6D39 /* WeatherServiceProtocol.swift */,
 				53A4594E2C298F9D00FD969B /* RainFall.sks */,
 				536398412C362CAF00427993 /* snowFall.sks */,
 				53A4594F2C298F9D00FD969B /* Assets.xcassets */,
@@ -393,6 +399,7 @@
 				53FDC4612C25567500F96B83 /* WeatherService.swift in Sources */,
 				53961F342C25538A00556E77 /* OPWeatherApp.swift in Sources */,
 				53A459532C29A43300FD969B /* RainScene.swift in Sources */,
+				53BA9B342C897A3A008E6D39 /* WeatherServiceProtocol.swift in Sources */,
 				53A459552C2D8E2F00FD969B /* SunnyScene.swift in Sources */,
 				53A4594B2C2572C800FD969B /* WeatherData.swift in Sources */,
 			);
@@ -402,7 +409,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53961F452C25538B00556E77 /* OPWeatherTests.swift in Sources */,
+				53BA9B362C899CD9008E6D39 /* MockWeatherService.swift in Sources */,
+				53961F452C25538B00556E77 /* WeatherViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
